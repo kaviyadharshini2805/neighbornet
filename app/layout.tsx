@@ -147,6 +147,51 @@ export default function RootLayout({
             opacity: 1;
           }
         `}</style>
+        {/*
+          KLEAP-AUTOPATCH: Tailwind v4 CDN in <head> to eliminate FOUC.
+          /_kleap/tailwind.js is proxied + edge-cached by the kleap-router worker.
+          See src/api/validation/KnownBuildErrors.ts (tailwindCdnHeadFix).
+        */}
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="anonymous" />
+        <style
+          type="text/tailwindcss"
+          dangerouslySetInnerHTML={{
+            __html: `
+              @theme {
+                --radius: 0.625rem;
+                --color-background: oklch(1 0 0);
+                --color-foreground: oklch(0.145 0 0);
+                --color-primary: oklch(0.205 0 0);
+                --color-primary-foreground: oklch(0.985 0 0);
+                --color-secondary: oklch(0.97 0 0);
+                --color-secondary-foreground: oklch(0.205 0 0);
+                --color-muted: oklch(0.97 0 0);
+                --color-muted-foreground: oklch(0.556 0 0);
+                --color-accent: oklch(0.97 0 0);
+                --color-accent-foreground: oklch(0.205 0 0);
+                --color-destructive: oklch(0.577 0.245 27.325);
+                --color-destructive-foreground: oklch(0.985 0 0);
+                --color-border: oklch(0.922 0 0);
+                --color-input: oklch(0.922 0 0);
+                --color-ring: oklch(0.708 0 0);
+                --animate-scroll: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
+                --animate-marquee: marquee var(--marquee-duration) linear infinite;
+                --animate-fade-in: fade-in 0.5s linear forwards;
+              }
+              @keyframes scroll { to { transform: translate(calc(-50% - 0.5rem)); } }
+              @keyframes marquee { 100% { transform: translateY(-50%); } }
+              @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+              .bg-gradient-radial { background-image: radial-gradient(var(--tw-gradient-stops)); }
+              .bg-gradient-conic { background-image: conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops)); }
+            `,
+          }}
+        />
+        <script src="/_kleap/tailwind.js" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var r=false;var reveal=function(f){if(r)return;r=true;if(!document.body)return;document.body.classList.remove('css-load-failed');document.body.classList.add(f?'css-load-failed':'css-loaded');try{window.dispatchEvent(new Event(f?'kleap-tailwind-timeout':'kleap-tailwind-ready'));}catch(e){}};var check=function(){var p=document.createElement('div');p.className='flex min-h-screen';p.style.cssText='position:absolute;left:-99999px;top:-99999px;opacity:0;pointer-events:none;';document.body.appendChild(p);var s=window.getComputedStyle(p);var ok=s.display==='flex'&&parseFloat(s.minHeight||'0')>0;p.remove();return ok;};var poll=function(d){if(check()){reveal(false);return;}if(Date.now()>d){reveal(true);return;}requestAnimationFrame(function(){poll(d);});};var start=function(){poll(Date.now()+3000);};if(document.body){start();}else{document.addEventListener('DOMContentLoaded',start);}})();`,
+          }}
+        />
       </head>
       <body
         className={cn(
