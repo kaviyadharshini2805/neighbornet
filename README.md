@@ -1,194 +1,232 @@
-# AI SaaS Template - COMPLETE & READY TO USE
+# AI SaaS Template
 
-🚨 **AI ASSISTANT**: This template is FULLY CONFIGURED. DO NOT recreate basic files!
+A production-ready SaaS starter template built with **Next.js 15**, **React 19**, **TypeScript**, and **Tailwind CSS**. The template provides a modern foundation for building scalable web applications with authentication, marketing pages, blog support, dark mode, and performance optimizations already configured.
 
-⚡ **STATUS**: All dependencies installed, all pages created, everything works out of the box.
+---
 
-## 🤖 AI Instructions - READ THIS FIRST
+## Overview
 
-### ✅ What EXISTS (Don't Create):
+This template is designed to accelerate SaaS application development by providing a complete project structure with essential features and best practices. Developers can focus on implementing business logic instead of spending time configuring project infrastructure.
 
-- `package.json` with all dependencies
-- Authentication pages in `(auth)/`
-- Marketing pages in `app/blog/`, `app/pricing/`, `app/contact/`
-- All UI components in `components/`
-- Tailwind CSS configuration
-- TypeScript configuration
+The template includes authentication pages, marketing pages, reusable UI components, MDX blog support, SEO optimization, and a performance-focused development environment.
 
-### 🎯 What to BUILD:
+---
 
-- New pages specific to user needs
-- Custom components using existing ones
-- Business logic and features
-- API integrations
+## Features
 
-### ❌ Common MISTAKES to AVOID:
+* Built with Next.js 15 App Router
+* React 19 Server Components
+* TypeScript support
+* Tailwind CSS styling
+* Framer Motion animations
+* Authentication pages (Login and Signup)
+* Landing page
+* Pricing page
+* Contact page
+* MDX-powered blog
+* Dark mode support
+* SEO optimization
+* Responsive design
+* Performance-first architecture
+* Turbopack support for fast development
 
-1. Creating `package.json` → IT EXISTS
-2. Installing packages → ALL INCLUDED
-3. Creating login/signup → USE `(auth)/login` and `(auth)/signup`
-4. Adding console.log → NOT ALLOWED
-5. Configuring Tailwind → ALREADY DONE
+---
 
-## 🚀 Features
+## Performance
 
-- **Next.js 15** with App Router
-- **Turbopack** enabled for 10x faster HMR
-- **React 19** with Server Components
-- **TypeScript** for type safety
-- **Tailwind CSS** for styling
-- **Framer Motion** for animations
-- **MDX Blog** with syntax highlighting
-- **Authentication Pages** (Login/Signup)
-- **Marketing Pages** (Landing, Pricing, Contact)
-- **Dark Mode** support
-- **SEO Optimized**
-- **Performance First** - Lighthouse score 100
+| Metric                     | Performance  |
+| -------------------------- | ------------ |
+| Development Server Startup | < 2 seconds  |
+| Hot Module Replacement     | < 100 ms     |
+| Production Build           | < 30 seconds |
+| First Load JavaScript      | ~75 kB       |
 
-## ⚡ Performance
+---
 
-- **Dev Server Startup**: <2 seconds
-- **Hot Module Replacement**: <100ms
-- **Production Build**: <30 seconds
-- **First Load JS**: ~75kB
+## Project Structure
 
-## 🏃‍♂️ Quick Start
+```text
+app/
+├── (auth)/
+│   ├── login/
+│   └── signup/
+├── blog/
+├── contact/
+├── pricing/
+├── api/
+├── page.tsx
+├── layout.tsx
+└── globals.css
+
+components/
+├── ui/
+├── navbar/
+└── [features]/
+```
+
+---
+
+## Technology Stack
+
+* Next.js 15
+* React 19
+* TypeScript
+* Tailwind CSS
+* Framer Motion
+* React Hook Form
+* Zod
+* Lucide React
+* Tabler Icons
+* MDX
+* Prism.js
+* next-themes
+
+---
+
+## Getting Started
+
+### Clone the Repository
 
 ```bash
-# Install dependencies (using pnpm for speed)
+git clone <repository-url>
+```
+
+### Navigate to the Project
+
+```bash
+cd <project-name>
+```
+
+### Install Dependencies
+
+```bash
 pnpm install
+```
 
-# Start development server with Turbopack
+---
+
+## Running the Application
+
+Start the development server:
+
+```bash
 pnpm dev
+```
 
-# Ultra-fast development mode
+For ultra-fast development mode:
+
+```bash
 pnpm dev:fast
 ```
 
-## 📁 Project Structure
+Open your browser and visit:
 
-```
-app/
-├── (auth)/          # Authentication pages
-│   ├── login/
-│   └── signup/
-├── blog/            # MDX blog posts
-├── contact/         # Contact page
-├── pricing/         # Pricing page
-├── page.tsx         # Landing page
-├── api/             # API routes
-├── layout.tsx       # Root layout
-└── globals.css      # Global styles
-
-components/
-├── ui/              # Reusable UI components
-├── navbar/          # Navigation components
-└── [features]/      # Feature-specific components
+```text
+http://localhost:3000
 ```
 
-## 🛠️ Commands
+---
 
-- `pnpm dev` - Start development server with Turbopack
-- `pnpm dev:fast` - Ultra-fast dev mode (skips checks)
-- `pnpm build` - Production build
-- `pnpm build:fast` - Fast production build (skips linting/type checking)
-- `pnpm start` - Start production server
-- `pnpm lint` - Run ESLint
-- `pnpm type-check` - Run TypeScript compiler
-- `pnpm clean` - Clean build cache
+## Available Commands
 
-## 🎨 Customization
+| Command           | Description              |
+| ----------------- | ------------------------ |
+| `pnpm dev`        | Start development server |
+| `pnpm dev:fast`   | Fast development mode    |
+| `pnpm build`      | Production build         |
+| `pnpm build:fast` | Fast production build    |
+| `pnpm start`      | Start production server  |
+| `pnpm lint`       | Run ESLint               |
+| `pnpm type-check` | Run TypeScript checks    |
+| `pnpm clean`      | Clean build cache        |
 
-### Adding New Pages
+---
 
-1. Create a new file in `app/` directory
-2. Export a default component
-3. Add metadata for SEO
+## Environment Variables
 
-```typescript
+Create a `.env.local` file in the project root.
+
+```env
+NEXT_PUBLIC_API_URL=
+DATABASE_URL=
+```
+
+Add any additional environment variables required by your application.
+
+---
+
+## Customization
+
+### Creating a New Page
+
+Create a new file inside the `app/` directory.
+
+```tsx
 export const metadata = {
-  title: 'Page Title',
-  description: 'Page description',
+  title: "Page Title",
+  description: "Page description",
 };
 
 export default function Page() {
-  return <div>Your content</div>;
+  return <div>Your Content</div>;
 }
 ```
 
 ### Adding Blog Posts
 
-1. Create a new `.mdx` file in `app/blog/[slug]/`
-2. Add frontmatter metadata
-3. Write your content in MDX
+Create a new `.mdx` file inside the blog directory.
 
-```mdx
+```md
 ---
-title: "Your Blog Post Title"
-publishedAt: "2024-01-01"
-summary: "Brief description"
-author: "Your Name"
+title: "Blog Title"
+publishedAt: "2025-01-01"
+summary: "Blog summary"
+author: "Author Name"
 ---
 
-Your blog content here...
+Write your content here.
 ```
 
-### Modifying Styles
+### Styling
 
-- Global styles: `app/globals.css`
-- Component styles: Use Tailwind classes
-- Theme colors: Update `tailwind.config.ts`
+* Global styles are located in `app/globals.css`
+* Components use Tailwind CSS utility classes
+* Theme configuration can be modified in `tailwind.config.ts`
 
-## 🔧 Configuration
+---
 
-### Environment Variables
+## Performance Optimizations
 
-Create `.env.local`:
+The template includes several built-in optimizations:
 
-```bash
-# Your environment variables
-NEXT_PUBLIC_API_URL=
-DATABASE_URL=
-# etc...
-```
+* Turbopack for faster development
+* Server Components by default
+* Automatic image optimization
+* Font optimization using `next/font`
+* Code splitting
+* Partial prerendering
+* Edge Runtime support
+* SEO-ready metadata configuration
 
-### Performance Optimizations
+---
 
-The template is pre-configured with:
+## Best Practices
 
-- Turbopack for fastest builds
-- Image optimization with AVIF/WebP
-- Font optimization with `next/font`
-- Aggressive code splitting
-- Partial prerendering
-- Edge runtime support
+* Use Server Components whenever possible.
+* Use Client Components only for interactive features.
+* Optimize images using `next/image`.
+* Lazy load heavy components.
+* Keep client-side JavaScript minimal.
+* Follow TypeScript best practices.
+* Organize reusable UI components inside the `components/` directory.
 
-## 📦 Tech Stack
+---
 
-- **Framework**: Next.js 15
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **Animations**: Framer Motion
-- **Forms**: React Hook Form + Zod
-- **Icons**: Lucide React, Tabler Icons
-- **Blog**: MDX with Prism.js
-- **Theme**: next-themes
+## Deployment
 
-## 🤖 AI Development
+### Vercel
 
-This template includes `AI_RULES.md` which provides guidance for AI assistants when modifying the codebase. It ensures consistent code quality and maintains performance standards.
-
-## 📈 Best Practices
-
-1. **Use Server Components by default** - Only use Client Components when needed
-2. **Lazy load heavy components** - Use `dynamic()` for code splitting
-3. **Optimize images** - Always use `next/image`
-4. **Minimize client JS** - Keep interactivity server-side when possible
-5. **Cache aggressively** - Use proper cache headers
-
-## 🚢 Deployment
-
-### Vercel (Recommended)
+Deploy directly using:
 
 ```bash
 vercel
@@ -196,14 +234,39 @@ vercel
 
 ### Other Platforms
 
-1. Build the project: `pnpm build`
-2. Start the server: `pnpm start`
-3. Ensure Node.js 18+ is available
+Build the project:
 
-## 📝 License
+```bash
+pnpm build
+```
 
-MIT - Use this template for any project!
+Start the production server:
+
+```bash
+pnpm start
+```
+
+Ensure Node.js 18 or later is installed in the deployment environment.
 
 ---
 
-Built with ❤️ for developers who value speed and performance.
+## License
+
+This project is licensed under the MIT License.
+
+---
+
+## Acknowledgements
+
+This template is built using the following technologies:
+
+* Next.js
+* React
+* TypeScript
+* Tailwind CSS
+* Framer Motion
+* React Hook Form
+* Zod
+* MDX
+* next-themes
+* Lucide React
